@@ -1,0 +1,113 @@
+<%
+  eComm.Session.DeleteItems("All")
+
+  $page := "agent-sign-up" //used in footer.a4d
+  $back := "index.php"
+  $next := "login.a4p"
+
+  session{"session_URL_This"} := $page
+  session{"session_URL_Back"} := $back
+  session{"session_URL_Next"} := $next
+
+  include("/includes/header.a4d")
+  include("/includes/nav_login.a4d")
+%>
+
+<div id="heading" class="outer">
+  <div class="inner">
+    <div class="row full">
+      <a href="index.php" id="loginLogo">eCommission Real Estate Commission Advance</a>
+    </div>
+  </div>
+</div>
+
+<div class="outer">
+  <div class="inner">
+    <div class="row">
+
+      <div class="col-sm-8 border-right">
+        <div class="headerContainer" style="border-bottom: 1px solid #CCC; padding-bottom: 20px; margin-bottom: 20px">
+          <h2>Getting Started is<br/>
+          <strong>Fast and Easy</strong></h2>
+        </div><!-- end .headerContainer -->
+  
+        <form role="form" action="/bin/form/join.a4p" method="post" id="joinForm" autocomplete="off">
+          <div class="row">
+            <div class="form-group"><br />
+              <h3><strong>First:</strong>&nbsp;Select if you're an:</h3>
+              <div>
+                <a id="agentButton" type="button" class="btn btn-lg orange">
+                  <p style="font-size:24px;">Agent</p>
+                  <p style="font-size:14px;">(or broker associate)</p>
+                </a>
+                &nbsp;&nbsp;or a&nbsp;&nbsp;
+                <a id="brokerButton" type="button" class="btn btn-lg navy">
+                  <p style="font-size:24px;">Managing Broker</p>
+                  <p style="font-size:14px;">(or company owner)</p>
+                </a>
+              </div>
+            </div>
+            <div id="brokerAlert" class="hideOnLoad alert" role="alert" style="margin-top:10px">
+              <p><strong>Important!</strong></p>
+                  <p>eCommission advances commissions to Broker/Agents through its subsidiary company, 3-Click Advance.</p>
+                  <p>New customers get 50% off on 40 day repayments. Use code BROKER50.</p>
+                  <p>Please click the button to apply using the 3-Click Advance website. Thank you.</p>
+              <button style="margin-top:10px;" id="go3Click" class="btn btn-xs orange" type="button">Go to 3-Click Advance</button>
+            </div>
+          </div>
+          <div class="hideOnLoad row" id="signupInfo">
+            <h3><strong>Next:</strong>&nbsp;Please provide the following information:</h3><br>
+            <div class="form-group">
+              <label class="control-label" for="signupEmail">Email address</label>
+              <input name="signupEmail" type="email" class="form-control" id="signupEmail"/ value="">
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="signupFirstName">First Name</label>
+              <input name="signupFirstName" type="text" class="form-control" id="signupFirstName" value=""/>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="signupLastName">Last Name</label>
+              <input name="signupLastName" type="text" class="form-control" id="signupLastName" value=""/>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="signupPassword">Create Password</label>
+              <input name="signupPassword" type="password" class="form-control" id="signupPassword" value=""/>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="signupConfirm">Confirm Password</label>
+              <input name="signupConfirm" type="password" class="form-control" id="signupConfirm" value=""/>
+            </div>
+            <input name="joinSubmit" type="submit" class="disabled btn btn-primary btn-lg orange pull-right" id="joinSubmit" value="Submit">
+            <br style="clear:both;"/>
+            <br/>
+            <p style="clear:both;"><small>By providing us your information, you authorize eCommission to access MLS information that you are entitled to receive directly, in order to make the sign up and application process faster and more convenient.</small></p>
+          </div>
+        </form>
+        
+      </div>
+      
+      <div class="col-sm-4 small">
+        <div style="padding: 0px 10px 10px; color: #666;">
+          <br />
+          <h3 style=" margin-top: 0px;">FAQs</h3>
+          <br>
+          <strong>Is there a credit check?</strong>
+          <br>No.<br><br>
+          <strong>How much can I get?</strong>
+          <br>Up to 90% of your net commission to a maximum of $15,000 per transaction. Limits may vary based on sales production history.
+          <br><br>
+          <strong>How long does it take?</strong>
+          <br>Applying takes just a few minutes to complete online. We fund your advance within 1 hour from the time we receive your completed request, during normal business days.
+          <br><br>
+          <strong> Have Other Questions?</strong>
+          <br>Call 1-877-882-4368
+          <br><br>
+          <a class="btn navy btn-large" onclick="javascript:OpenLHNChat();return false;" href="#">Live Chat</a>
+        </div>
+      </div>
+         
+    </div>
+  </div><!-- end .inner -->
+</div><!-- end #content -->
+
+<% include("/includes/footer.a4d") %>
