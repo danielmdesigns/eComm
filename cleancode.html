@@ -7,113 +7,39 @@
 
 <body>
 
-<div id="heading" class="outer">
-  <div class="inner">
-    <div class="row full">
-      <a href="index.php" id="loginLogo">eCommission Real Estate Commission Advance</a>
-    </div> <!-- END row -->
-  </div> <!-- END inner -->
-</div> <!-- END outer -->
 
-<div class="outer">
-  <div class="inner">
-    <div class="row">
+<div class="col-sm-offset-3 col-sm-6">
+  <div class="headerContainer" style="border-bottom: 1px solid #CCC; padding-bottom: 20px; margin-bottom: 20px">
+    <h2>Welcome Back, <strong>Log In!</strong></h2>
+  </div><!-- end .headerContainer -->
 
-<div class="col-xs-8 border-right">
-<div class="headerContainer" style="border-bottom: 1px solid #CCC; padding-bottom: 20px; margin-bottom: 20px"><br>
-  <h3>Getting Started is <strong>Fast and Confidential</strong></h3>
-  <p class="blurb">See how much you qualify for. No commitment until you apply and are funded.</p>
-  <br>
-<form role="form" action="/bin/form/join.a4p" method="post" id="joinForm" autocomplete="off">
-<div class="form-group">            
-    <div class="panel-body clear">
-      <strong style="font-size:20px;">I am an </strong> &nbsp;
-	  <span class="rwd-break">
-	  
-        <input type="radio" id="agentButton" name="button" vaule="" class="required"/>
-        <label for="agentButton">Agent &nbsp;&nbsp;</label>
-		
-		<span class="rwd-break">
-        <input type="radio" id="brokerButton" name="button" vaule="" class="required"/>
-        <label for="brokerButton">Managing Broker</label>
-		</span>
-	
-    </div> <!-- END panel-body -->
-</div> <!-- END form-group -->	  
+<form role="form" action="/bin/form/login.a4p" method="post" id="loginForm" autocomplete="off">
 
-<div id="brokerAlert" class="hideOnLoad alert" role="alert" style="margin-top:10px">
-  <p><strong>Important!</strong></p>
-    <p>eCommission advances commissions to Broker/Agents through its subsidiary company, 3-Click Advance.</p>
-    <p>Please click the button to apply using the 3-Click Advance website. Thank you.</p>
-  <button style="margin-top:10px;" id="go3Click" class="btn btn-xs orange" type="button">Go to 3-Click Advance</button>
-</div> <!-- END brokerAlert -->
-<br>
-<div class="" id="signupInfo">
-    <div class="form-group">
-      <label class="control-label" for="signupEmail">Email address</label>
-      <input name="signupEmail" type="email" class="form-control" id="signupEmail"/ value="">
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="signupFirstName">First Name</label>
-      <input name="signupFirstName" type="text" class="form-control" id="signupFirstName" value=""/>
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="signupLastName">Last Name</label>
-      <input name="signupLastName" type="text" class="form-control" id="signupLastName" value=""/>
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="signupPassword">Create Password</label>
-      <input name="signupPassword" type="password" class="form-control" id="signupPassword" value=""/>
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="signupConfirm">Confirm Password</label>
-      <input name="signupConfirm" type="password" class="form-control" id="signupConfirm" value=""/>
-    </div>
-  <input name="joinSubmit" type="submit" class="disabled btn btn-primary btn-lg orange pull-right" id="joinSubmit" value="Submit">
-  <br style="clear:both;"/><br/><br/>
-  
-  <p style="clear:both;"><small>By providing us your information, you authorize eCommission to access MLS information that you are entitled to receive directly, in order to make the sign up and application process faster and more convenient.</small></p>
-  </div> <!-- END col-sm-8 -->
-</form> <!-- END form -->
-</div> <!-- END signupInfo -->
+<div class="form-group">
+  <label class="control-label" for="login_Email">Email address</label>
+  <input name="login_Email" type="email" class="form-control" id="login_Email" value=""/ tabindex="1">
+  <input type="checkbox" id="remCheck" name="remCheck" value="ON" /><label for"remCheck" id="remLabel" style="font-size:14px; font-weight:300">&nbsp;Remember my email address</label>
+</div><!-- end .form-group -->
+
+<div class="form-group">
+  <label class="control-label" for="login_Pass">Password</label>
+  <input name="login_Pass" type="password" class="form-control" id="login_Pass" value=""/ tabindex="2">
+</div><!-- end .form-group -->
+
+<div class="form-group">
+  <p style="font-size:14px;">Forgot your password? <a href="/password_reset.a4d">Click here</a> to reset it or <a onclick="javascript:OpenLHNChat();return false;" href="#">click here</a> to live chat.<p>
 </div>
 
-<div class="faqsSignup col-xs-4">
-  <div style="padding: 0px 10px 10px 10px; color: #666;"><br />
-      <ul class="indent2" style="margin:-5px 0 0 -20px;">
-      	<li>Receive up to $15,000</li>
-        <li>Funds wired in 1 business day</li>
-        <li>No credit check</li>
-        <li>Endorsed by top real estate brands</li>
-        <p><em>"You provide a great service."</em><br><strong>Beth P., Prudential</strong></p>
-      </ul>
-      
-    <br><br>
-    
-    <div class="securedLogos">
-      <img class="left img-responsive" src="/img/logos/BBB-logo.png">
-      <img src="/img/logos/truste-logo.png" class="img-responsive">
-    </div>
-    
-    <br><br>
-    
-    <div class="safeNsecure">
-      <img class="left" src="/img/icons/lock.png" height="60" width="60" style="margin-right:10px;">
-      <div class="securedGroup" style="display:table;">
-        <p style="color:#0085b2;margin-bottom:0;"><strong>Safe and Secure</strong></p>
-        <p style="font-size:0.7em;">Your information is confidential and we ensure security of your data.</p>
-      </div>
-    </div>
-    
-    <br><br>
-	
-    <a class="btn navy btn-large" onclick="javascript:OpenLHNChat();return false;" href="#">Live Chat</a>
-  </div>
+<div class="form-group">
+  <p style="font-size:16px;"><strong>Need an Account? <a  href="/agent-sign-up.a4d" style="color: orange">Click here</a></strong> to create one.</p>
 </div>
 
-    </div> <!-- END row -->
-  </div> <!-- END inner -->
-</div> <!-- END outer -->
+<input name="loginSubmit" type="submit" class="btn btn-primary btn-lg orange pull-right" id="loginSubmit" style="margin-bottom:30px;" value="Sign In">
+
+</form> <!-- end form -->
+</div> <!-- end col-sm-offset-3 col-sm-6 -->
+
+
 
 </body>
 </html>
