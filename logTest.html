@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<%
+  eComm.Session.DeleteItems("All")
+
+  $page := "account-login" //used in footer.a4d
+  $back := "index.php"
+  $next := "login.a4p"
+
+  session{"session_URL_This"} := $page
+  session{"session_URL_Back"} := $back
+  session{"session_URL_Next"} := $next
+
+  include("/includes/header.a4d")
+  include("/includes/nav_login.a4d")
+%>
+
+<div id="heading" class="outer">
+  <div class="inner">
+    <div class="row full">
+      <a href="index.php" id="loginLogo">eCommission Real Estate Commission Advance</a>
+      
+<br><br>
+
+<div class="container-fluid">
+  <div class="col-sm-12">
+    <div class="fullheight">
+    
+<div class="col-sm-4 col-xs-12 fullheight sideBarBGtop">
+  <strong class="accountsHeading">You already have an account. Login to get a commission advance.</strong><br><br>
+    <p class="accountsParagraph">To verify and enter you secure eCommission account, please sign in.</p>
+    <p class="accountsParagraph">Don't have an account? Don't worry, you can <a href="#">Click Here</a> to create one.</p><br>
+  <ul class="accountChecks">
+    <li class="indent3"><span class="glyphicon glyphicon-ok-circle"></span> Receive up to $15,000</li>
+    <li class="indent3"><span class="glyphicon glyphicon-ok-circle"></span> Funds wired in 1 business day</li>
+    <li class="indent3"><span class="glyphicon glyphicon-ok-circle"></span> Endorsed by top real estate brands</li>
+    <li class="indent3"><span class="glyphicon glyphicon-ok-circle"></span> No credit check</li>
+  </ul>
+  <div class="spcr2"></div>
+</div>
+      
+<div class="col-sm-8 col-xs-12 fullheight">
+<div class="col-sm-9 col-sm-offset-1">
+  <div class="headerContainer" style="padding-bottom: 20px; margin-bottom: 20px">
+    <h2>Log In <strong>to Your Account</strong></h2>
+  </div> <!-- end .headerContainer -->
+
+<form role="form" action="/bin/form/login.a4p" method="post" id="loginForm" autocomplete="off">
+  <div class="form-group">
+    <label class="control-label" for="login_Email">Email address</label>
+    <input name="login_Email" type="email" class="form-control" id="login_Email" value=""/ tabindex="1">
+    <input type="checkbox" id="remCheck" name="remCheck" value="ON" /><label for"remCheck" id="remLabel" style="font-size:14px; font-weight:300">&nbsp;Remember my email address</label>
+  </div> <!-- end form-group -->
+  
+  <div class="form-group">
+    <label class="control-label" for="login_Pass">Password</label>
+    <input name="login_Pass" type="password" class="form-control" id="login_Pass" value=""/ tabindex="2">
+  </div><!-- end .form-group -->
+  
+  <input name="loginSubmit" type="submit" class="btn btn-primary btn-lg orange2 pull-left" id="loginSubmit" value="Sign In">
+  
+  <div class="form-group accountNeed">
+    <p style="font-size:12px;"><strong>Need an Account? <a  href="/agent-sign-up.a4d" style="color: orange">Click here</a></strong> to create one.</p>
+  </div>
+</form>
+  
+</div> <!-- end col-sm-9 col-sm-offset-1 -->
+</div> <!-- end col-sm-8 col-xs-12 fullheight -->
+      
+    </div> <!-- end row -->
+  </div> <!-- end col-sm-12 -->
+</div> <!-- end container-fluid -->
+
+
+<div class="container-fluid spcr">
+  <div class="col-sm-12">
+    <div class="fullheight">
+    
+<div class="col-sm-4 col-xs-12 fullheight sideBarBGbottom">
+  <strong class="accountsHeading">Can't Log In?</strong><br><br>
+    <p class="accountsParagraph">You can change or reset the password for your eCommission account by providing some information.</p>
+    <p class="accountsParagraph">After entering your password and clicking the Reset Password button, you will receive an automatic email with a link that allows you to update your password and log into your account.</p><br>
+  <strong class="accountsHeading">Need more help?</strong><br><br>
+    <p class="accountsParagraph">If you've forgotten your password, please <a onclick="javascript:OpenLHNChat();return false;" href="#">click here to live chat</a> with a Customer Service Representative for assistance.</p>
+<div class="spcr2"></div>
+</div>
+      
+<div class="col-sm-8 col-xs-12 fullheight">
+  <div class="col-sm-9 col-sm-offset-1">
+    <div class="headerContainer" style="padding-bottom: 20px; margin-bottom: 20px">
+      <h2>Reset<strong> my Password</strong></h2>
+    </div> <!-- end .headerContainer -->
+  
+  <% if (session{"resetShowPage"}="") %>
+  <form role="form" action="/bin/form/<%=$page%>.a4p" method="post" id="<%=$page%>Form" autocomplete="off">
+    <div class="form-group">
+      <label class="control-label" for="login_Email">Email address</label>
+      <input name="resetEmail" type="email" class="form-control" id="resetEmail" value=""/>
+    </div>        
+    <input name="resetSubmit" type="submit" class=" btn btn-primary btn-lg orange2 pull-left" id="resetSubmit" value="Reset Password">
+  </form>
+  <% else %>
+    <h3>Done!</h3>
+    <h5>An email has been sent to</h5>
+    <h4><strong><% =session{"resetEmail"} %></strong></h4>
+    <h5>with instructions on how to reset your password.</h5>
+    <% eComm.Session.DeleteItems("All") %>
+    <input name="goLogin" type="button" class=" btn btn-primary btn-lg orange pull-right" id="goLogin" value="Back To Login">
+  <% end if %>
+    
+  </div> <!-- col-sm-9 col-sm-offset-1 -->
+</div> <!-- col-sm-8 col-xs-12 fullheight -->
+      
+    </div> <!-- end fullheight -->
+  </div> <!-- end col-sm-12 -->
+</div> <!-- end container-fluid spcr -->
+
+    </div> <!-- end row full -->
+  </div> <!-- end inner -->
+</div> <!-- end heading -->
+  <div class="inner teal" style="padding: 50px; text-align: center; font-size: 20px; margin-bottom:-30px;">
+  Have questions? Call us at <strong>1-877-882-4368</strong>
+  </div>
+</div>
+
+
+<% include("/includes/footer.a4d") %>
+
+</body>
+</html>
